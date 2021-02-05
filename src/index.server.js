@@ -10,6 +10,7 @@ const mongoose = require('mongoose');
 // routes
 
 const userRoutes = require('./routes/auth');
+const adminRoutes = require('./routes/admin/auth');
 
 env.config();
 
@@ -38,6 +39,7 @@ mongoose.connect(
 app.use(bodyParser.json())
 
 app.use('/api', userRoutes);
+app.use('/api', adminRoutes);
 //const PORT = process.env.PORT || 5000;
 
 
